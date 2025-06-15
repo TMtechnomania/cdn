@@ -1,136 +1,193 @@
-/* ********** GENERATED IMPORTS START ********** */
-@import "./css/b.css";
-@import "./css/bb.css";
-@import "./css/bl.css";
-@import "./css/br.css";
-@import "./css/bt.css";
-@import "./css/fs.css";
-@import "./css/h.css";
-@import "./css/lh.css";
-@import "./css/m.css";
-@import "./css/max-h.css";
-@import "./css/max-w.css";
-@import "./css/mb.css";
-@import "./css/min-h.css";
-@import "./css/min-w.css";
-@import "./css/ml.css";
-@import "./css/mr.css";
-@import "./css/mt.css";
-@import "./css/mx.css";
-@import "./css/my.css";
-@import "./css/p.css";
-@import "./css/pb.css";
-@import "./css/pl.css";
-@import "./css/pr.css";
-@import "./css/pt.css";
-@import "./css/px.css";
-@import "./css/py.css";
-@import "./css/r.css";
-@import "./css/rb.css";
-@import "./css/rbl.css";
-@import "./css/rbr.css";
-@import "./css/rl.css";
-@import "./css/rr.css";
-@import "./css/rt.css";
-@import "./css/rtl.css";
-@import "./css/rtr.css";
-@import "./css/w.css";
-/* ********** GENERATED IMPORTS END ************ */
-
 /* Inter, Hind */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+	/* Colors */
+	--white: 255, 255, 255;
+	--black: 0, 0, 0;
+
+	--gray-300: 237, 237, 237;
+	--gray-400: 193, 193, 193;
+	--gray-500: 149, 149, 149;
+	--gray-600: 105, 105, 105;
+	--gray-700: 61, 61, 61;
+	--gray-800: 17, 17, 17;
+
+	--blue-300: 191, 220, 254;
+	--blue-400: 128, 185, 255;
+	--blue-500: 0, 114, 255;
+	--blue-600: 0, 85, 191;
+	--blue-700: 0, 57, 127;
+	--blue-800: 0, 42, 95;
+
+	/* Property Overlay */
+	--bg-alpha: 1;
+	--text-alpha: 1;
+
+	--bg: rgba(var(--gray-300), var(--bg-alpha));
+	--text: rgba(var(--gray-800), var(--text-alpha));
+	--primary: rgba(var(--blue-500), var(--bg-alpha));
+	--secondary: rgba(var(--blue-300), var(--bg-alpha));
+
+	font-size: 16px;
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg: rgba(var(--gray-300), var(--bg-alpha));
+		--text: rgba(var(--gray-800), var(--text-alpha));
+		--primary: rgba(var(--blue-500), var(--bg-alpha));
+		--secondary: rgba(var(--blue-300), var(--bg-alpha));
+	}
+}
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--bg: rgba(var(--gray-800), var(--bg-alpha));
+		--text: rgba(var(--gray-300), var(--text-alpha));
+		--primary: rgba(var(--blue-500), var(--bg-alpha));
+		--secondary: rgba(var(--blue-800), var(--bg-alpha));
+	}
+} */
 *,
 *::before,
 *::after {
-	--round-tl: 0;
-	--round-tr: 0;
-	--round-br: 0;
-	--round-bl: 0;
-	--border-t: 0;
-	--border-r: 0;
-	--border-b: 0;
-	--border-l: 0;
-	--border-color: transparent;
-	--border-style: solid;
-	--ml: 0;
-	--mr: 0;
-	--mt: 0;
-	--mb: 0;
-	--pl: 0;
-	--pr: 0;
-	--pt: 0;
-	--pb: 0;
-	background: transparent;
-	border-top: var(--border-t) var(--border-style) var(--border-color);
-	border-right: var(--border-r) var(--border-style) var(--border-color);
-	border-bottom: var(--border-b) var(--border-style) var(--border-color);
-	border-left: var(--border-l) var(--border-style) var(--border-color);
-	border-top-left-radius: var(--round-tl);
-	border-top-right-radius: var(--round-tr);
-	border-bottom-right-radius: var(--round-br);
-	border-bottom-left-radius: var(--round-bl);
+	/* Reset */
+	border: none;
+	border-radius: none;
 	box-sizing: border-box;
-	color: inherit;
 	font-family: "Inter", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
 	line-height: 1.5;
 	list-style: none;
-	margin: var(--mt) var(--mr) var(--mb) var(--ml);
+	margin: 0;
 	outline: none;
-	padding: var(--pt) var(--pr) var(--pb) var(--pl);
+	padding: 0;
 	text-decoration: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-:root {
-	font-size: 16px;
-	line-height: 1.5;
+	/* Theme */
+	background: var(--bg);
+	color: var(--text);
 }
 code,
 pre {
 	font-family: "Fira Code", monospace;
 }
-img,
+/* img,
 video,
 canvas,
 svg {
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-.block {
-	display: block;
-}
-.inline {
-	display: inline;
-}
-.inline-block {
-	display: inline-block;
-}
-.hidden {
-	display: none;
-}
-.flex {
-	display: flex;
-}
-.inline-flex {
-	display: inline-flex;
-}
-.grid {
-	display: grid;
-}
-.inline-grid {
-	display: inline-grid;
-}
+} */
 
-.aic {
-	align-items: center;
+.bg-white {
+	background: rgba(var(--white), var(--bg-alpha));
 }
-.aifs {
-	align-items: flex-start;
+.bg-black {
+	background: rgba(var(--black), var(--bg-alpha));
 }
-.aife {
-	align-items: flex-end;
+.bg-gray-300 {
+	background: rgba(var(--gray-300), var(--bg-alpha));
 }
-.aib {
-	align-items: baseline;
+.bg-gray-400 {
+	background: rgba(var(--gray-400), var(--bg-alpha));
+}
+.bg-gray-500 {
+	background: rgba(var(--gray-500), var(--bg-alpha));
+}
+.bg-gray-600 {
+	background: rgba(var(--gray-600), var(--bg-alpha));
+}
+.bg-gray-700 {
+	background: rgba(var(--gray-700), var(--bg-alpha));
+}
+.bg-gray-800 {
+	background: rgba(var(--gray-800), var(--bg-alpha));
+}
+.bg-blue-300 {
+	background: rgba(var(--blue-300), var(--bg-alpha));
+}
+.bg-blue-400 {
+	background: rgba(var(--blue-400), var(--bg-alpha));
+}
+.bg-blue-500 {
+	background: rgba(var(--blue-500), var(--bg-alpha));
+}
+.bg-blue-600 {
+	background: rgba(var(--blue-600), var(--bg-alpha));
+}
+.bg-blue-700 {
+	background: rgba(var(--blue-700), var(--bg-alpha));
+}
+.bg-blue-800 {
+	background: rgba(var(--blue-800), var(--bg-alpha));
+}
+.text-white {
+	color: rgba(var(--white), var(--text-alpha));
+}
+.text-black {
+	color: rgba(var(--black), var(--text-alpha));
+}
+.text-gray-300 {
+	color: rgba(var(--gray-300), var(--text-alpha));
+}
+.text-gray-400 {
+	color: rgba(var(--gray-400), var(--text-alpha));
+}
+.text-gray-500 {
+	color: rgba(var(--gray-500), var(--text-alpha));
+}
+.text-gray-600 {
+	color: rgba(var(--gray-600), var(--text-alpha));
+}
+.text-gray-700 {
+	color: rgba(var(--gray-700), var(--text-alpha));
+}
+.text-gray-800 {
+	color: rgba(var(--gray-800), var(--text-alpha));
+}
+.text-blue-300 {
+	color: rgba(var(--blue-300), var(--text-alpha));
+}
+.text-blue-400 {
+	color: rgba(var(--blue-400), var(--text-alpha));
+}
+.text-blue-500 {
+	color: rgba(var(--blue-500), var(--text-alpha));
+}
+.text-blue-600 {
+	color: rgba(var(--blue-600), var(--text-alpha));
+}
+.text-blue-700 {
+	color: rgba(var(--blue-700), var(--text-alpha));
+}
+.text-blue-800 {
+	color: rgba(var(--blue-800), var(--text-alpha));
+}
+.fw-100 {
+	font-weight: 100;
+}
+.fw-200 {
+	font-weight: 200;
+}
+.fw-300 {
+	font-weight: 300;
+}
+.fw-400 {
+	font-weight: 400;
+}
+.fw-500 {
+	font-weight: 500;
+}
+.fw-600 {
+	font-weight: 600;
+}
+.fw-700 {
+	font-weight: 700;
+}
+.fw-800 {
+	font-weight: 800;
+}
+.fw-900 {
+	font-weight: 900;
 }
