@@ -1,10 +1,21 @@
 const outputDir = "./css/";
 const fs = require("fs");
-function generateCSS(name, property, range, withExtras = false) {
+
+function generateCSS(
+	name,
+	properties,
+	range,
+	withExtras = false,
+	step = 0.125,
+	unit = "rem",
+) {
 	let css = "";
-	const step = 0.125;
+
+	// Generate rem-based classes
 	for (let i = 0; i <= range; i++) {
-		css += `.${name}-${i} { ${property}: ${(i * step).toFixed(3)}rem }\n`;
+		const value = `${(i * step).toFixed(3)}${unit}`;
+		const rules = properties.map((prop) => `${prop}: ${value}`).join("; ");
+		css += `.${name}-${i} { ${rules} }\n`;
 	}
 
 	// Append useful fractions
@@ -47,13 +58,15 @@ function generateCSS(name, property, range, withExtras = false) {
 		[13, 16],
 		[15, 16],
 	];
+
 	for (const [numerator, denominator] of commonFractions) {
 		const value = ((numerator / denominator) * 100).toFixed(3) + "%";
-		css += `.${name}-${numerator}\\/${denominator} { ${property}: ${value} }\n`;
+		const rules = properties.map((prop) => `${prop}: ${value}`).join("; ");
+		css += `.${name}-${numerator}\\/${denominator} { ${rules} }\n`;
 	}
+
 	if (withExtras) {
-		// Extra values (tailwind style + dynamic fractions)
-		const extras = {
+		const extrasMap = {
 			width: [
 				["full", "100%"],
 				["screen", "100vw"],
@@ -73,15 +86,19 @@ function generateCSS(name, property, range, withExtras = false) {
 				["none", "none"],
 			],
 		};
-		// Append static extras
-		if (extras[property]) {
-			for (const [key, val] of extras[property]) {
-				css += `.${name}-${key} { ${property}: ${val} }\n`;
+
+		for (const prop of properties) {
+			if (extrasMap[prop]) {
+				for (const [key, val] of extrasMap[prop]) {
+					css += `.${name}-${key} { ${prop}: ${val} }\n`;
+				}
 			}
 		}
 	}
+
+	// Single file per group name (like p.css)
 	if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
-	const fileName = `${outputDir}${property}.css`;
+	const fileName = `${outputDir}${name}.css`;
 	fs.writeFile(fileName, css.trim(), (err) => {
 		if (err) {
 			console.error(`Error writing to file ${fileName}:`, err);
@@ -91,22 +108,51 @@ function generateCSS(name, property, range, withExtras = false) {
 	});
 }
 
-generateCSS("p", "padding", 256);
-generateCSS("pt", "padding-top", 256);
-generateCSS("pr", "padding-right", 256);
-generateCSS("pb", "padding-bottom", 256);
-generateCSS("pl", "padding-left", 256);
-generateCSS("m", "margin", 256);
-generateCSS("mt", "margin-top", 256);
-generateCSS("mr", "margin-right", 256);
-generateCSS("mb", "margin-bottom", 256);
-generateCSS("ml", "margin-left", 256);
-generateCSS("w", "width", 256, true);
-generateCSS("h", "height", 256, true);
-generateCSS("max-w", "max-width", 256, true);
-generateCSS("max-h", "max-height", 256, true);
-generateCSS("min-w", "min-width", 256, true);
-generateCSS("min-h", "min-height", 256, true);
+generateCSS("p", ["--pt", "--pr", "--pb", "--pl"], 256, true);
+generateCSS("px", ["--pr", "--pl"], 256, true);
+generateCSS("py", ["--pt", "--pb"], 256, true);
+generateCSS("pt", ["--pt"], 256, true);
+generateCSS("pr", ["--pr"], 256, true);
+generateCSS("pb", ["--pb"], 256, true);
+generateCSS("pl", ["--pl"], 256, true);
+
+generateCSS("m", ["--mt", "--mr", "--mb", "--ml"], 256, true);
+generateCSS("mx", ["--mr", "--ml"], 256, true);
+generateCSS("my", ["--mt", "--mb"], 256, true);
+generateCSS("mt", ["--mt"], 256, true);
+generateCSS("mr", ["--mr"], 256, true);
+generateCSS("mb", ["--mb"], 256, true);
+generateCSS("ml", ["--ml"], 256, true);
+
+generateCSS("w", ["width"], 256, true);
+generateCSS("h", ["height"], 256, true);
+generateCSS("min-w", ["min-width"], 256, true);
+generateCSS("max-w", ["max-width"], 256, true);
+generateCSS("min-h", ["min-height"], 256, true);
+generateCSS("max-h", ["max-height"], 256, true);
+
+generateCSS("fs", ["font-size"], 256);
+generateCSS("lh", ["line-height"], 256);
+
+generateCSS(
+	"r",
+	["--round-tl", "--round-tr", "--round-bl", "--round-br"],
+	256,
+	true,
+);
+generateCSS("rt", ["--round-tl", "--round-tr"], 256, true);
+generateCSS("rr", ["--round-tr", "--round-br"], 256, true);
+generateCSS("rb", ["--round-bl", "--round-br"], 256, true);
+generateCSS("rl", ["--round-tl", "--round-bl"], 256, true);
+generateCSS("rtl", ["--round-tl"], 256, true);
+generateCSS("rtr", ["--round-tr"], 256, true);
+generateCSS("rbl", ["--round-bl"], 256, true);
+generateCSS("rbr", ["--round-br"], 256, true);
+generateCSS("b", ["--border-t", "--border-r", "--border-b", "--border-l"], 16, true, 1, "px");
+generateCSS("bt", ["--border-t"], 16, true, 1, "px");
+generateCSS("br", ["--border-r"], 16, true, 1, "px");
+generateCSS("bb", ["--border-b"], 16, true, 1, "px");
+generateCSS("bl", ["--border-l"], 16, true, 1, "px");
 
 setTimeout(() => {
 	fs.readdir(outputDir, (err, files) => {
