@@ -1,3 +1,45 @@
+/* ********** GENERATED IMPORTS START ********** */
+@import "./css/b.css";
+@import "./css/bb.css";
+@import "./css/bl.css";
+@import "./css/br.css";
+@import "./css/bt.css";
+@import "./css/bx.css";
+@import "./css/by.css";
+@import "./css/fs.css";
+@import "./css/h.css";
+@import "./css/lh.css";
+@import "./css/m.css";
+@import "./css/max-h.css";
+@import "./css/max-w.css";
+@import "./css/mb.css";
+@import "./css/min-h.css";
+@import "./css/min-w.css";
+@import "./css/ml.css";
+@import "./css/mr.css";
+@import "./css/mt.css";
+@import "./css/mx.css";
+@import "./css/my.css";
+@import "./css/p.css";
+@import "./css/pb.css";
+@import "./css/pl.css";
+@import "./css/pr.css";
+@import "./css/pt.css";
+@import "./css/px.css";
+@import "./css/py.css";
+@import "./css/r.css";
+@import "./css/rb.css";
+@import "./css/rbl.css";
+@import "./css/rbr.css";
+@import "./css/rl.css";
+@import "./css/rr.css";
+@import "./css/rt.css";
+@import "./css/rtl.css";
+@import "./css/rtr.css";
+@import "./css/w.css";
+/* ********** GENERATED IMPORTS END ************ */
+
+
 /* Inter, Hind */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
@@ -21,13 +63,10 @@
 	--blue-800: 0, 42, 95;
 
 	/* Property Overlay */
-	--bg-alpha: 1;
-	--text-alpha: 1;
-
 	--bg: rgba(var(--gray-300), var(--bg-alpha));
 	--text: rgba(var(--gray-800), var(--text-alpha));
-	--primary: rgba(var(--blue-500), var(--bg-alpha));
-	--secondary: rgba(var(--blue-300), var(--bg-alpha));
+	--primary: rgba(var(--blue-500));
+	--secondary: rgba(var(--blue-300));
 
 	font-size: 16px;
 }
@@ -50,6 +89,8 @@
 *,
 *::before,
 *::after {
+	--bg-alpha: 1;
+	--text-alpha: 1;
 	/* Reset */
 	border: none;
 	border-radius: none;
@@ -67,18 +108,467 @@
 	background: var(--bg);
 	color: var(--text);
 }
+.bg {
+	background: var(--bg);
+}
+.bg-primary {
+	background: var(--primary);
+}
+.bg-secondary {
+	background: var(--secondary);
+}
+.text {
+	color: var(--text);
+}
+.text-primary {
+	color: var(--primary);
+}
+.text-secondary {
+	color: var(--secondary);
+}
+.font-sans {
+	font-family: "Inter", sans-serif;
+}
+.font-mono {
+	font-family: "Fira Code", monospace;
+}
+.border {
+	border-top-color: rgb(var(--gray-500));
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-right-color: rgb(var(--gray-500));
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-bottom-color: rgb(var(--gray-500));
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-left-color: rgb(var(--gray-500));
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+.border-none {
+	border: none;
+}
+.b-primary {
+	border-color: var(--primary);
+}
+.b-secondary {
+	border-color: var(--secondary);
+}
+.b-white {
+	border-color: rgb(var(--white));
+}
+.b-black {
+	border-color: rgb(var(--black));
+}
+.b-gray-300 {
+	border-color: rgb(var(--gray-300));
+}
+.b-gray-400 {
+	border-color: rgb(var(--gray-400));
+}
+.b-gray-500 {
+	border-color: rgb(var(--gray-500));
+}
+.b-gray-600 {
+	border-color: rgb(var(--gray-600));
+}
+.b-gray-700 {
+	border-color: rgb(var(--gray-700));
+}
+.b-gray-800 {
+	border-color: rgb(var(--gray-800));
+}
+.b-blue-300 {
+	border-color: rgb(var(--blue-300));
+}
+.b-blue-400 {
+	border-color: rgb(var(--blue-400));
+}
+.b-blue-500 {
+	border-color: rgb(var(--blue-500));
+}
+.b-blue-600 {
+	border-color: rgb(var(--blue-600));
+}
+.b-blue-700 {
+	border-color: rgb(var(--blue-700));
+}
+.b-blue-800 {
+	border-color: rgb(var(--blue-800));
+}
+.bx-primary {
+	border-left-color: var(--primary);
+	border-right-color: var(--primary);
+}
+.border-x {
+	border-left: 1px solid currentColor;
+	border-right: 1px solid currentColor;
+}
+.border-x-none {
+	border-left: none;
+	border-right: none;
+}
+.bx-secondary {
+	border-left-color: var(--secondary);
+	border-right-color: var(--secondary);
+}
+.bx-white {
+	border-left-color: rgb(var(--white));
+	border-right-color: rgb(var(--white));
+}
+.bx-black {
+	border-left-color: rgb(var(--black));
+	border-right-color: rgb(var(--black));
+}
+.bx-gray-300 {
+	border-left-color: rgb(var(--gray-300));
+	border-right-color: rgb(var(--gray-300));
+}
+.bx-gray-400 {
+	border-left-color: rgb(var(--gray-400));
+	border-right-color: rgb(var(--gray-400));
+}
+.bx-gray-500 {
+	border-left-color: rgb(var(--gray-500));
+	border-right-color: rgb(var(--gray-500));
+}
+.bx-gray-600 {
+	border-left-color: rgb(var(--gray-600));
+	border-right-color: rgb(var(--gray-600));
+}
+.bx-gray-700 {
+	border-left-color: rgb(var(--gray-700));
+	border-right-color: rgb(var(--gray-700));
+}
+.bx-gray-800 {
+	border-left-color: rgb(var(--gray-800));
+	border-right-color: rgb(var(--gray-800));
+}
+.bx-blue-300 {
+	border-left-color: rgb(var(--blue-300));
+	border-right-color: rgb(var(--blue-300));
+}
+.bx-blue-400 {
+	border-left-color: rgb(var(--blue-400));
+	border-right-color: rgb(var(--blue-400));
+}
+.bx-blue-500 {
+	border-left-color: rgb(var(--blue-500));
+	border-right-color: rgb(var(--blue-500));
+}
+.bx-blue-600 {
+	border-left-color: rgb(var(--blue-600));
+	border-right-color: rgb(var(--blue-600));
+}
+.bx-blue-700 {
+	border-left-color: rgb(var(--blue-700));
+	border-right-color: rgb(var(--blue-700));
+}
+.bx-blue-800 {
+	border-left-color: rgb(var(--blue-800));
+	border-right-color: rgb(var(--blue-800));
+}
+.border-y {
+	border-top: 1px solid currentColor;
+	border-bottom: 1px solid currentColor;
+}
+.border-y-none {
+	border-top: none;
+	border-bottom: none;
+}
+.by-primary {
+	border-top-color: var(--primary);
+	border-bottom-color: var(--primary);
+}
+.by-secondary {
+	border-top-color: var(--secondary);
+	border-bottom-color: var(--secondary);
+}
+.by-white {
+	border-top-color: rgb(var(--white));
+	border-bottom-color: rgb(var(--white));
+}
+.by-black {
+	border-top-color: rgb(var(--black));
+	border-bottom-color: rgb(var(--black));
+}
+.by-gray-300 {
+	border-top-color: rgb(var(--gray-300));
+	border-bottom-color: rgb(var(--gray-300));
+}
+.by-gray-400 {
+	border-top-color: rgb(var(--gray-400));
+	border-bottom-color: rgb(var(--gray-400));
+}
+.by-gray-500 {
+	border-top-color: rgb(var(--gray-500));
+	border-bottom-color: rgb(var(--gray-500));
+}
+.by-gray-600 {
+	border-top-color: rgb(var(--gray-600));
+	border-bottom-color: rgb(var(--gray-600));
+}
+.by-gray-700 {
+	border-top-color: rgb(var(--gray-700));
+	border-bottom-color: rgb(var(--gray-700));
+}
+.by-gray-800 {
+	border-top-color: rgb(var(--gray-800));
+	border-bottom-color: rgb(var(--gray-800));
+}
+.by-blue-300 {
+	border-top-color: rgb(var(--blue-300));
+	border-bottom-color: rgb(var(--blue-300));
+}
+.by-blue-400 {
+	border-top-color: rgb(var(--blue-400));
+	border-bottom-color: rgb(var(--blue-400));
+}
+.by-blue-500 {
+	border-top-color: rgb(var(--blue-500));
+	border-bottom-color: rgb(var(--blue-500));
+}
+.by-blue-600 {
+	border-top-color: rgb(var(--blue-600));
+	border-bottom-color: rgb(var(--blue-600));
+}
+.by-blue-700 {
+	border-top-color: rgb(var(--blue-700));
+	border-bottom-color: rgb(var(--blue-700));
+}
+.by-blue-800 {
+	border-top-color: rgb(var(--blue-800));
+	border-bottom-color: rgb(var(--blue-800));
+}
+.border-t {
+	border-top: 1px solid currentColor;
+}
+.border-t-none {
+	border-top: none;
+}
+.bt-primary {
+	border-top-color: var(--primary);
+}
+.bt-secondary {
+	border-top-color: var(--secondary);
+}
+.bt-white {
+	border-top-color: rgb(var(--white));
+}
+.bt-black {
+	border-top-color: rgb(var(--black));
+}
+.bt-gray-300 {
+	border-top-color: rgb(var(--gray-300));
+}
+.bt-gray-400 {
+	border-top-color: rgb(var(--gray-400));
+}
+.bt-gray-500 {
+	border-top-color: rgb(var(--gray-500));
+}
+.bt-gray-600 {
+	border-top-color: rgb(var(--gray-600));
+}
+.bt-gray-700 {
+	border-top-color: rgb(var(--gray-700));
+}
+.bt-gray-800 {
+	border-top-color: rgb(var(--gray-800));
+}
+.bt-blue-300 {
+	border-top-color: rgb(var(--blue-300));
+}
+.bt-blue-400 {
+	border-top-color: rgb(var(--blue-400));
+}
+.bt-blue-500 {
+	border-top-color: rgb(var(--blue-500));
+}
+.bt-blue-600 {
+	border-top-color: rgb(var(--blue-600));
+}
+.bt-blue-700 {
+	border-top-color: rgb(var(--blue-700));
+}
+.bt-blue-800 {
+	border-top-color: rgb(var(--blue-800));
+}
+.border-r {
+	border-right: 1px solid currentColor;
+}
+.border-r-none {
+	border-right: none;
+}
+.br-primary {
+	border-right-color: var(--primary);
+}
+.br-secondary {
+	border-right-color: var(--secondary);
+}
+.br-white {
+	border-right-color: rgb(var(--white));
+}
+.br-black {
+	border-right-color: rgb(var(--black));
+}
+.br-gray-300 {
+	border-right-color: rgb(var(--gray-300));
+}
+.br-gray-400 {
+	border-right-color: rgb(var(--gray-400));
+}
+.br-gray-500 {
+	border-right-color: rgb(var(--gray-500));
+}
+.br-gray-600 {
+	border-right-color: rgb(var(--gray-600));
+}
+.br-gray-700 {
+	border-right-color: rgb(var(--gray-700));
+}
+.br-gray-800 {
+	border-right-color: rgb(var(--gray-800));
+}
+.br-blue-300 {
+	border-right-color: rgb(var(--blue-300));
+}
+.br-blue-400 {
+	border-right-color: rgb(var(--blue-400));
+}
+.br-blue-500 {
+	border-right-color: rgb(var(--blue-500));
+}
+.br-blue-600 {
+	border-right-color: rgb(var(--blue-600));
+}
+.br-blue-700 {
+	border-right-color: rgb(var(--blue-700));
+}
+.br-blue-800 {
+	border-right-color: rgb(var(--blue-800));
+}
+.border-b {
+	border-bottom: 1px solid currentColor;
+}
+.border-b-none {
+	border-bottom: none;
+}
+.bb-primary {
+	border-bottom-color: var(--primary);
+}
+.bb-secondary {
+	border-bottom-color: var(--secondary);
+}
+.bb-white {
+	border-bottom-color: rgb(var(--white));
+}
+.bb-black {
+	border-bottom-color: rgb(var(--black));
+}
+.bb-gray-300 {
+	border-bottom-color: rgb(var(--gray-300));
+}
+.bb-gray-400 {
+	border-bottom-color: rgb(var(--gray-400));
+}
+.bb-gray-500 {
+	border-bottom-color: rgb(var(--gray-500));
+}
+.bb-gray-600 {
+	border-bottom-color: rgb(var(--gray-600));
+}
+.bb-gray-700 {
+	border-bottom-color: rgb(var(--gray-700));
+}
+.bb-gray-800 {
+	border-bottom-color: rgb(var(--gray-800));
+}
+.bb-blue-300 {
+	border-bottom-color: rgb(var(--blue-300));
+}
+.bb-blue-400 {
+	border-bottom-color: rgb(var(--blue-400));
+}
+.bb-blue-500 {
+	border-bottom-color: rgb(var(--blue-500));
+}
+.bb-blue-600 {
+	border-bottom-color: rgb(var(--blue-600));
+}
+.bb-blue-700 {
+	border-bottom-color: rgb(var(--blue-700));
+}
+.bb-blue-800 {
+	border-bottom-color: rgb(var(--blue-800));
+}
+.border-l {
+	border-left: 1px solid currentColor;
+}
+.border-l-none {
+	border-left: none;
+}
+.bl-primary {
+	border-left-color: var(--primary);
+}
+.bl-secondary {
+	border-left-color: var(--secondary);
+}
+.bl-white {
+	border-left-color: rgb(var(--white));
+}
+.bl-black {
+	border-left-color: rgb(var(--black));
+}
+.bl-gray-300 {
+	border-left-color: rgb(var(--gray-300));
+}
+.bl-gray-400 {
+	border-left-color: rgb(var(--gray-400));
+}
+.bl-gray-500 {
+	border-left-color: rgb(var(--gray-500));
+}
+.bl-gray-600 {
+	border-left-color: rgb(var(--gray-600));
+}
+.bl-gray-700 {
+	border-left-color: rgb(var(--gray-700));
+}
+.bl-gray-800 {
+	border-left-color: rgb(var(--gray-800));
+}
+.bl-blue-300 {
+	border-left-color: rgb(var(--blue-300));
+}
+.bl-blue-400 {
+	border-left-color: rgb(var(--blue-400));
+}
+.bl-blue-500 {
+	border-left-color: rgb(var(--blue-500));
+}
+.bl-blue-600 {
+	border-left-color: rgb(var(--blue-600));
+}
+.bl-blue-700 {
+	border-left-color: rgb(var(--blue-700));
+}
+.bl-blue-800 {
+	border-left-color: rgb(var(--blue-800));
+}
 code,
 pre {
 	font-family: "Fira Code", monospace;
 }
-/* img,
+img,
 video,
 canvas,
 svg {
 	display: block;
 	max-width: 100%;
 	height: auto;
-} */
+}
 
 .bg-white {
 	background: rgba(var(--white), var(--bg-alpha));
@@ -190,4 +680,46 @@ svg {
 }
 .fw-900 {
 	font-weight: 900;
+}
+.text-xs {
+	font-size: 0.75rem; /* 12px */
+}
+.text-sm {
+	font-size: 0.875rem; /* 14px */
+}
+.text-base {
+	font-size: 1rem; /* 16px */
+}
+.text-lg {
+	font-size: 1.125rem; /* 18px */
+}
+.text-xl {
+	font-size: 1.25rem; /* 20px */
+}
+.text-2xl {
+	font-size: 1.5rem; /* 24px */
+}
+.text-3xl {
+	font-size: 1.875rem; /* 30px */
+}
+.text-4xl {
+	font-size: 2.25rem; /* 36px */
+}
+.text-5xl {
+	font-size: 3rem; /* 48px */
+}
+.text-6xl {
+	font-size: 3.75rem; /* 60px */
+}
+.text-7xl {
+	font-size: 4.5rem; /* 72px */
+}
+.text-8xl {
+	font-size: 6rem; /* 96px */
+}
+.text-9xl {
+	font-size: 8rem; /* 128px */
+}
+.text-10xl {
+	font-size: 10rem; /* 160px */
 }

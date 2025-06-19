@@ -1,14 +1,7 @@
 const outputDir = "./css/";
 const fs = require("fs");
 
-function generateCSS(
-	name,
-	properties,
-	range,
-	withExtras = false,
-	step = 0.125,
-	unit = "rem",
-) {
+function generateCSS(name, properties, range, step = 0.125, unit = "rem") {
 	let css = "";
 
 	// Generate rem-based classes
@@ -65,33 +58,31 @@ function generateCSS(
 		css += `.${name}-${numerator}\\/${denominator} { ${rules} }\n`;
 	}
 
-	if (withExtras) {
-		const extrasMap = {
-			width: [
-				["full", "100%"],
-				["screen", "100vw"],
-				["auto", "auto"],
-				["fit", "fit-content"],
-				["min", "min-content"],
-				["max", "max-content"],
-				["none", "none"],
-			],
-			height: [
-				["full", "100%"],
-				["screen", "100vh"],
-				["auto", "auto"],
-				["fit", "fit-content"],
-				["min", "min-content"],
-				["max", "max-content"],
-				["none", "none"],
-			],
-		};
+	const extrasMap = {
+		width: [
+			["full", "100%"],
+			["screen", "100vw"],
+			["auto", "auto"],
+			["fit", "fit-content"],
+			["min", "min-content"],
+			["max", "max-content"],
+			["none", "none"],
+		],
+		height: [
+			["full", "100%"],
+			["screen", "100vh"],
+			["auto", "auto"],
+			["fit", "fit-content"],
+			["min", "min-content"],
+			["max", "max-content"],
+			["none", "none"],
+		],
+	};
 
-		for (const prop of properties) {
-			if (extrasMap[prop]) {
-				for (const [key, val] of extrasMap[prop]) {
-					css += `.${name}-${key} { ${prop}: ${val} }\n`;
-				}
+	for (const prop of properties) {
+		if (extrasMap[prop]) {
+			for (const [key, val] of extrasMap[prop]) {
+				css += `.${name}-${key} { ${prop}: ${val} }\n`;
 			}
 		}
 	}
@@ -108,53 +99,58 @@ function generateCSS(
 	});
 }
 
-generateCSS("p", ["--pt", "--pr", "--pb", "--pl"], 256, true);
-generateCSS("px", ["--pr", "--pl"], 256, true);
-generateCSS("py", ["--pt", "--pb"], 256, true);
-generateCSS("pt", ["--pt"], 256, true);
-generateCSS("pr", ["--pr"], 256, true);
-generateCSS("pb", ["--pb"], 256, true);
-generateCSS("pl", ["--pl"], 256, true);
+generateCSS("p", ["padding"], 256);
+generateCSS("px", ["padding-right", "padding-left"], 256);
+generateCSS("py", ["padding-top", "padding-bottom"], 256);
+generateCSS("pt", ["padding-top"], 256);
+generateCSS("pr", ["padding-right"], 256);
+generateCSS("pb", ["padding-bottom"], 256);
+generateCSS("pl", ["padding-left"], 256);
 
-generateCSS("m", ["--mt", "--mr", "--mb", "--ml"], 256, true);
-generateCSS("mx", ["--mr", "--ml"], 256, true);
-generateCSS("my", ["--mt", "--mb"], 256, true);
-generateCSS("mt", ["--mt"], 256, true);
-generateCSS("mr", ["--mr"], 256, true);
-generateCSS("mb", ["--mb"], 256, true);
-generateCSS("ml", ["--ml"], 256, true);
+generateCSS("m", ["margin"], 256);
+generateCSS("mx", ["margin-right", "margin-left"], 256);
+generateCSS("my", ["margin-top", "margin-bottom"], 256);
+generateCSS("mt", ["margin-top"], 256);
+generateCSS("mr", ["margin-right"], 256);
+generateCSS("mb", ["margin-bottom"], 256);
+generateCSS("ml", ["margin-left"], 256);
 
-generateCSS("w", ["width"], 256, true);
-generateCSS("h", ["height"], 256, true);
-generateCSS("min-w", ["min-width"], 256, true);
-generateCSS("max-w", ["max-width"], 256, true);
-generateCSS("min-h", ["min-height"], 256, true);
-generateCSS("max-h", ["max-height"], 256, true);
+generateCSS("w", ["width"], 256);
+generateCSS("h", ["height"], 256);
+generateCSS("min-w", ["min-width"], 256);
+generateCSS("max-w", ["max-width"], 256);
+generateCSS("min-h", ["min-height"], 256);
+generateCSS("max-h", ["max-height"], 256);
 
 generateCSS("fs", ["font-size"], 256);
 generateCSS("lh", ["line-height"], 256);
 
+generateCSS("r", ["border-radius"], 256);
+generateCSS("rt", ["border-top-left-radius", "border-top-right-radius"], 256);
 generateCSS(
-	"r",
-	["--round-tl", "--round-tr", "--round-bl", "--round-br"],
+	"rr",
+	["border-top-right-radius", "border-bottom-right-radius"],
 	256,
-	true,
 );
-generateCSS("rt", ["--round-tl", "--round-tr"], 256, true);
-generateCSS("rr", ["--round-tr", "--round-br"], 256, true);
-generateCSS("rb", ["--round-bl", "--round-br"], 256, true);
-generateCSS("rl", ["--round-tl", "--round-bl"], 256, true);
-generateCSS("rtl", ["--round-tl"], 256, true);
-generateCSS("rtr", ["--round-tr"], 256, true);
-generateCSS("rbl", ["--round-bl"], 256, true);
-generateCSS("rbr", ["--round-br"], 256, true);
-generateCSS("b", ["--border-t", "--border-r", "--border-b", "--border-l"], 16, true, 1, "px");
-generateCSS("bt", ["--border-t"], 16, true, 1, "px");
-generateCSS("br", ["--border-r"], 16, true, 1, "px");
-generateCSS("bb", ["--border-b"], 16, true, 1, "px");
-generateCSS("bl", ["--border-l"], 16, true, 1, "px");
+generateCSS(
+	"rb",
+	["border-bottom-left-radius", "border-bottom-right-radius"],
+	256,
+);
+generateCSS("rl", ["border-top-left-radius", "border-bottom-left-radius"], 256);
+generateCSS("rtl", ["border-top-left-radius"], 256);
+generateCSS("rtr", ["border-top-right-radius"], 256);
+generateCSS("rbl", ["border-bottom-left-radius"], 256);
+generateCSS("rbr", ["border-bottom-right-radius"], 256);
+generateCSS("b", ["border-width"], 64, 1, "px");
+generateCSS("bx", ["border-left-width", "border-right-width"], 64, 1, "px");
+generateCSS("by", ["border-top-width", "border-bottom-width"], 64, 1, "px");
+generateCSS("bt", ["border-top-width"], 64, 1, "px");
+generateCSS("br", ["border-right-width"], 64, 1, "px");
+generateCSS("bb", ["border-bottom-width"], 64, 1, "px");
+generateCSS("bl", ["border-left-width"], 64, 1, "px");
 
-setTimeout(() => {
+function generateFiles() {
 	fs.readdir(outputDir, (err, files) => {
 		if (err) {
 			console.error("Failed to read css directory:", err);
@@ -217,4 +213,7 @@ setTimeout(() => {
 			});
 		});
 	});
-}, 1000); // Delay to ensure all files are written before reading
+}
+
+// Generate the CSS files
+generateFiles();
